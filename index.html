@@ -41,15 +41,15 @@
         <h1>Chung Min Kim</h1>
         <p style="margin-top: -0.5em; font-size: 0.9em; opacity: 0.8;">I go by "Chung Min", not "Chung".</p>
         <p>
-            I am a fourth-year PhD student at <a href="https://www.berkeley.edu/">UC Berkeley</a>, where I am advised by <a href="https://goldberg.berkeley.edu/">Ken Goldberg</a> and <a href="https://people.eecs.berkeley.edu/~kanazawa/">Angjoo Kanazawa</a>. 
+            I am a fifth-year PhD student at <a href="https://www.berkeley.edu/">UC Berkeley</a>, where I am advised by <a href="https://goldberg.berkeley.edu/">Ken Goldberg</a> and <a href="https://people.eecs.berkeley.edu/~kanazawa/">Angjoo Kanazawa</a>. 
             I received my dual B.S. degree in EECS (Electrical Engineering and Computer Science) and Mechanical Engineering from <a href="https://www.berkeley.edu/">UC Berkeley</a> in 2021.
             My PhD work is funded by the <a href="http://www.nsfgrfp.org/">NSF GRFP</a>. 🐻
         </p>
         <p>
-            Currently, I am interning at Amazon Frontiers AI and Robotics (FAR).
-            Before, I was also fortunate to be a visiting student with 
-            <a href="https://scholar.google.com/citations?user=SXXEZhYAAAAJ">Ko Nishino</a> at <a href="https://vision.ist.i.kyoto-u.ac.jp/">Kyoto University</a> in summer 2024, 
-            and with <a href="https://www.lerrelpinto.com/">Lerrel Pinto</a> at <a href="https://cs.nyu.edu/home/index.html">NYU</a> in summer 2025. 
+            I was fortunate to spend time as a research intern at Amazon Frontier AI &amp; Robotics (FAR),
+            and as a visiting student with
+            <a href="https://scholar.google.com/citations?user=SXXEZhYAAAAJ">Ko Nishino</a> at <a href="https://vision.ist.i.kyoto-u.ac.jp/">Kyoto University</a> (summer 2024)
+            and <a href="https://www.lerrelpinto.com/">Lerrel Pinto</a> at <a href="https://cs.nyu.edu/home/index.html">NYU</a> (summer 2025).
         </p>
         <p>
             I am working on 3D vision and robotics in the "real-world".
@@ -83,8 +83,6 @@
     <section>
       <h2>Research</h2>
 
-      <p>⚙️ Under construction ⚙️</p>
-
       <!-- Paper list will be dynamically generated here -->
       <ul id="paper-list" style="margin-top: 1em" data-show-recent="false"></ul>
       [ <a href="#" onclick="toggleRecentPapers(event)">Show older papers</a> ]
@@ -92,6 +90,31 @@
       <!-- Generate paper list. -->
       <script>
         const papers = [
+          {
+            previewSrc: "./assets/qf3.mp4",
+            title: "QF3: Fast Off-Policy RL with Filtered Q-Gradients for Flow Policies",
+            authors: [
+              "Chung Min Kim",
+              "Brent Yi",
+              "David McAllister",
+              "Hongsuk Choi",
+              "Himanshu Gaurav Singh",
+              "Jinkun Cao",
+              "Ken Goldberg",
+              "Pieter Abbeel",
+              "Carmelo Sferrazza",
+              "Angjoo Kanazawa",
+            ],
+            links: [
+              { text: "Website", url: "https://qf3-rl.github.io/" },
+              { text: "Paper", url: "https://qf3-rl.github.io/data/qf3.pdf" },
+            ],
+            summary:
+              "Improve flow policies with Q-gradients (and trust it only near the replay data).",
+            highlighted: false,
+            recent: true,
+            new: false,
+          },
           {
             previewSrc: "./assets/fpo.mp4",
             title: "Flow Matching Policy Gradients",
@@ -429,7 +452,7 @@
                       : formattedName;
                   })
                   .join(", ")}.
-                <span style="font-weight: 450">${paper.conference}.</span>
+                ${paper.conference ? `<span style="font-weight: 450">${paper.conference}.</span>` : ""}
                 <div style="height: 0.375em"></div>
                 ${paper.links
                   .map((link) => `<a href="${link.url}">${link.text}</a>`)
